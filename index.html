@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dricklek för 2</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #0066cc;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: #ff4757;
+      color: white;
+      margin: 20px auto;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #ff3838;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    #text {
+      margin-top: 40px;
+      font-size: 20px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 95%;
+    }
+    @media (max-width: 600px) {
+      body {
+        margin-top: 10px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin: 10px 0;
+      }
+      button {
+        padding: 18px 30px;
+        font-size: 16px;
+        max-width: 100%;
+      }
+      #text {
+        font-size: 18px;
+        min-height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>🍻 Dricklek för 2 🍻</h1>
+<button onclick="nyRunda()">Nästa</button>
+<div id="text"></div>
+
+<script>
+const regler = [
+  "Spelare 1 dricker 2 klunkar",
+  "Spelare 2 dricker 2 klunkar",
+  "Båda dricker 1 klunk",
+  "Den som skrattar först dricker 3 klunkar",
+  "Sten sax påse – förloraren dricker 2",
+  "Sanning eller shot – välj!",
+  "Byt plats och drick 1 klunk",
+  "Den som är längst dricker 2 klunkar"
+];
+
+function nyRunda() {
+  const slump = regler[Math.floor(Math.random() * regler.length)];
+  document.getElementById("text").innerText = slump;
+}
+</script>
+
+</body>
+</html>
